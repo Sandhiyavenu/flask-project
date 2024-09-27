@@ -1,0 +1,28 @@
+<html>
+    <head><title>
+        sample register
+    </title></head>
+    <body>
+        <div class="flask">
+        <h1>Admin Login</h1>
+        <form action="/login" method="post">
+            {% with message=get_flashed_messages()%}
+            {% if message%}
+            <div class="alert alert-warning mt-3">
+                {{message[0]}}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label><br>
+                <input type="text" class="form-control" name="username">
+            </div><br>
+            <div class="mb-3"></div>
+                <label for="password" class="form-label">password</label><br>
+                <input type="text" class="form-control" name="password">
+            </div><br>
+            <button type="submit" class="btn btn-primary w-100">LOGIN</button>
+        </form>
+        </div>
+    </body>
+</html>

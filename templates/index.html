@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Slider Using Only HTML and CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-top {
+            height: 150px;
+            width: 90%; 
+            object-fit: contain; 
+        }
+        .hero {
+            height: 100vh;
+            background: url("{{ url_for('static', filename='images/toy3.jpg') }}") no-repeat center center / cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 {
+            color: rgb(209, 207, 61);
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        @media(max-width:992px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+        @media(max-width:768px) {
+            .hero { height: 70vh; }
+            .hero h1 { font-size: 2rem; }
+        }
+        @media(max-width:576px) {
+            .hero h1 { font-size: 1.75rem; }
+        }
+        #service {
+            background-color: #44383d; 
+        }
+        #appointment {
+            background-color: #5c4a10; 
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Website</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#service">TYPES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('home') }}">BUY NOW</a>
+                </li>
+                <li class="nav-item"></li>
+                    <a class="nav-link active" href="{{ url_for('login') }}">ADMIN</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="text-center">
+        <h1>WELCOME TO SANDY TOY SHOP</h1>
+        <p class="lead text-white">Enjoy always</p>
+        <a href="#service" class="btn btn-primary btn-lg">Learn More</a>
+    </div>
+</section>
+
+<section id="service" class="py-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/t3.jfif') }}" class="card-img-top" alt="Plastic Toys">
+                    <div class="card-body">
+                        <h5 class="card-title">Plastic Toys</h5>
+                        <p class="card-text">Engaging children in imaginative and creative play. Teaching concepts like shapes, colors, and numbers through interactive toys.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/t1.jfif') }}" class="card-img-top" alt="Fabric Toys">
+                    <div class="card-body">
+                        <h5 class="card-title">Fabric Toys</h5>
+                        <p class="card-text">Soft materials reduce the risk of injury, making them great for infants and toddlers. Available in countless colors, patterns, and styles, appealing to diverse tastes.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/t5.jfif') }}" class="card-img-top" alt="Fabric Toys">
+                    <div class="card-body">
+                        <h5 class="card-title">Electronic Toys</h5>
+                        <p class="card-text">Provide entertainment, educational content, and interactive learning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/t6.jfif') }}" class="card-img-top" alt="Fabric Toys">
+                    <div class="card-body">
+                        <h5 class="card-title">Role play Toys</h5>
+                        <p class="card-text">Encourage imaginative play, social skills, and understanding of everyday roles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/t7.jfif') }}" class="card-img-top" alt="Fabric Toys">
+                    <div class="card-body">
+                        <h5 class="card-title">Sensor Toys</h5>
+                        <p class="card-text">Help with focus, anxiety relief, and sensory development.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/n3.jfif') }}" class="card-img-top" alt="Wooden Toys">
+                    <div class="card-body">
+                        <h5 class="card-title">Wooden Toys</h5>
+                        <p class="card-text">Shop safe eco-friendly wooden toys & dolls. Montessori, educational & Indian toys that inspire creativity & learning in kids. Free shipping available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
